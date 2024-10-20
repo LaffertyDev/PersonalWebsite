@@ -1,3 +1,7 @@
+@use '../colors';
+@use '../scssconstants';
+
+
 label {
 	margin-right: 0.5em;
 }
@@ -44,8 +48,8 @@ form {
 }
 
 output {
-	border: 1px solid $primary-neutral;
-	background-color: $primary-neutral-light;
+	border: 1px solid colors.$primary-neutral;
+	background-color: colors.$primary-neutral-light;
 	padding: 1.5em;
 	display: block;
 }

@@ -1,8 +1,11 @@
-.#{$namespace}-site-footer {
-    border-top: 3px solid $neutral-grey;
-    background-color: $complementary-neutral-dark;
+@use '../colors';
+@use '../scssconstants';
 
-    .#{$namespace}-footer-content {
-        color: $white;
+.#{scssconstants.$namespace}-site-footer {
+    border-top: 3px solid colors.$neutral-grey;
+    background-color: colors.$complementary-neutral-dark;
+
+    .#{scssconstants.$namespace}-footer-content {
+        color: colors.$white;
     }
 }

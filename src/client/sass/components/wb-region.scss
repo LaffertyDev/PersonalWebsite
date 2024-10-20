@@ -1,5 +1,6 @@
+@use '../scssconstants';
 
-.#{$namespace}-#{$wbnamespace}-region {
+.#{scssconstants.$namespace}-#{scssconstants.$wbnamespace}-region {
     margin: 10px 0px;
 
     p {

@@ -1,7 +1,7 @@
-@import 'scssconstants';
-@import 'colors';
-@import 'layouts';
-@import 'components';
+@use 'scssconstants';
+@use 'colors';
+@use 'layouts';
+@use 'components';
 
 
 html {
@@ -22,7 +22,7 @@ html, body {
 }
 
 div {
-    color: $black;
+    color: colors.$black;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
     grid-template-rows: max-content 1fr max-content;
     grid-row-gap: 1rem;
     margin: 0em;
-    background-color: $complementary-neutral;
+    background-color: colors.$complementary-neutral;
 }
 
 main {
@@ -53,17 +53,17 @@ header, footer {
 }
 
 section {
-    background-color: $white;
+    background-color: colors.$white;
     margin-bottom: 2rem;
     box-shadow: 1px 2px 3px 0 rgba(0,0,0,0.3);
 
     & > header {
-        background-color: $complementary-neutral-light;
+        background-color: colors.$complementary-neutral-light;
         font-size: 1.5em;
         line-height: 1.5em;
     }
 
-    .#{$namespace}-section-copy {
+    .#{scssconstants.$namespace}-section-copy {
         padding: 1.5em;
 
         @media (max-width: 600px) {
@@ -77,7 +77,7 @@ a {
 }
 
 code {
-    background-color: $complementary-neutral-light;
+    background-color: colors.$complementary-neutral-light;
     padding: 1px 5px;
     display:inline-block;
     margin: 2px;

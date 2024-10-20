@@ -1,16 +1,20 @@
+@use '../colors';
+@use '../scssconstants';
+
+
 button {
     &:hover {
         cursor: pointer;
     }
 }
 
-.#{$namespace}-btn-primary {
-    background-color: $primary-colour;
-    border-color: $primary-dark;
+.#{scssconstants.$namespace}-btn-primary {
+    background-color: colors.$primary-colour;
+    border-color: colors.$primary-dark;
 }
 
 
-.#{$namespace}-btn {
+.#{scssconstants.$namespace}-btn {
     appearance: button;
     -moz-appearance: button;
     -webkit-appearance: button;

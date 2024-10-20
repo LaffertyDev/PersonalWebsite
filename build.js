@@ -1,4 +1,5 @@
-import sass from "sass"
+import * as sass from "sass"
+
 import fs from "fs"
 import handlebars from "handlebars"
 

@@ -1,4 +1,5 @@
-@import '_scssconstants';
+@use 'scssconstants';
+@use 'colors';
 
 .pull-left {
     float: left;
@@ -8,9 +9,9 @@
     float: right;
 }
 
-.#{$namespace}-sidebar {
+.#{scssconstants.$namespace}-sidebar {
     float: left;
     width: 20%;
     height: 100%;
-    background-color: $neutral-grey;
+    background-color: colors.$neutral-grey;
 }

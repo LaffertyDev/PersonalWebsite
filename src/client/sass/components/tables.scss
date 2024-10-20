@@ -1,3 +1,5 @@
+@use '../colors';
+@use '../scssconstants';
 
 table {
 	display: inline-block;
@@ -9,11 +11,11 @@ table {
 
 td {
 	padding: 0.5em;
-	border: 1px solid $primary-neutral;
+	border: 1px solid colors.$primary-neutral;
 }
 
 thead {
-	background-color: $primary-neutral-light;
+	background-color: colors.$primary-neutral-light;
 
     td {
         font-weight: bold;

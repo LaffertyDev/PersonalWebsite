@@ -1,3 +1,6 @@
+@use '../colors';
+@use '../scssconstants';
+
 nav {
     ul {
         margin: 0em;
@@ -7,13 +10,13 @@ nav {
         li {
             display: inline-block;
             //margin-left: -4px;
-            border: 1px solid $primary-dark;
-            background-color: $primary-light;
+            border: 1px solid colors.$primary-dark;
+            background-color: colors.$primary-light;
             border-radius: 8px;
             line-height: 2em;
 
             a {
-                color: $white;
+                color: colors.$white;
                 display: block;
                 padding: 0 20px;
                 text-decoration: none;
@@ -22,14 +25,14 @@ nav {
     }
 }
 
-.#{$namespace}-site-header {
-    border-bottom: 3px solid $neutral-grey;
-    background-color: $complementary-neutral-dark;
-    color: $white;
+.#{scssconstants.$namespace}-site-header {
+    border-bottom: 3px solid colors.$neutral-grey;
+    background-color: colors.$complementary-neutral-dark;
+    color: colors.$white;
     justify-content: space-between;
 }
 
-.#{$namespace}-logo {
+.#{scssconstants.$namespace}-logo {
     // I'm not really happy about this
     // This is because I can't intsersect the logo's margin with the
     // header's padding

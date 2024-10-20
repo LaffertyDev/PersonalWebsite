@@ -1,3 +1,6 @@
+@use '../colors';
+@use '../scssconstants';
+
 dl {
     display: grid;
     grid-template-columns: minmax(100px, max-content) minmax(100px, max-content);
@@ -13,7 +16,7 @@ dd {
     grid-column-start: 2;
 }
 
-.#{$namespace}-column {
+.#{scssconstants.$namespace}-column {
 	column-width: 350px;
 	
 	dl {

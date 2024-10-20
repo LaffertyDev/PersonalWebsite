@@ -1,12 +1,14 @@
-@import './components/header';
-@import './components/footer';
-@import './components/buttons';
-@import './components/wb-region';
-@import './components/forms';
-@import './components/lists';
-@import './components/tables.scss';
+@use './components/header';
+@use './components/footer';
+@use './components/buttons';
+@use './components/wb-region';
+@use './components/forms';
+@use './components/lists';
+@use './components/tables.scss';
+@use 'scssconstants';
 
-.#{$namespace}-video {
+
+.#{scssconstants.$namespace}-video {
     width: 320px;
     height: 200px;
 }
