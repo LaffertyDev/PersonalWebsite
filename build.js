@@ -1,6 +1,6 @@
-var sass = require("sass");
-var fs = require("fs");
-var handlebars = require("handlebars");
+import sass from "sass"
+import fs from "fs"
+import handlebars from "handlebars"
 
 class BuildSystem {
 	BuildCSS() {

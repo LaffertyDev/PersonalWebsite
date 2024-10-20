@@ -1,6 +1,6 @@
-import commonjs from "rollup-plugin-commonjs";
-import resolve from "rollup-plugin-node-resolve";
-import replace from "rollup-plugin-replace";
+import commonjs from "@rollup/plugin-commonjs";
+import resolve from "@rollup/plugin-node-resolve";
+import replace from "@rollup/plugin-replace";
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
 // `npm run build` -> `production` is true
@@ -27,14 +27,11 @@ const WorldbuilderModule = {
 			modulesOnly: false
 		}),
 		commonjs({
-			include: 'node_modules/**',
-			namedExports: {
-				'node_modules/react/index.js': ['Component', 'PureComponent', 'Fragment', 'Children', 'createElement'],
-				'node_modules/react-dom/index.js': ['render']
-			}
+			include: 'node_modules/**'
 		}),
 		replace({
-		  'process.env.NODE_ENV': JSON.stringify( 'production' )
+		  'process.env.NODE_ENV': JSON.stringify( 'production' ),
+		  'preventAssignment': true
 		}),
 		sourcemaps()
 	]

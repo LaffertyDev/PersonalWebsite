@@ -40,3 +40,31 @@ Too hands on, can automate this.
 4. (If Javascript) Add compilation info to Rollup
 
 All of this could 100% be automated away.
+
+
+## TODO
+
+* Easy to write things
+* Flexible frontend, can make experiments
+
+* timedistance / worldbuilder continue to work and are ported
+
+* No scss
+
+
+Things to change about existing site:
+
+* Colors
+* Favicon (do pixel art yo)
+* Link to my itch.io projects
+* Simplify header
+* `lafferty.dev` in the top left should be a link to the homepage
+* rename `dnd worldbuilder` to `Region Generator`
+
+* Fix scroll down changing the color of the footer
+
+* delete medieval demographics page
+* delete or rewrite clock tracker
+
+
+* inline all unpkg stuff, host scripts directly

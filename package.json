@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "FILL ME IN",
   "main": "app.ts",
+  "type": "module",
   "scripts": {
     "build": "npm run build:lint && npm run clean && npm run build:compile && npm run build:bundle && npm run build:css && npm run build:html",
     "build:bundle": "rollup -c",
@@ -10,38 +11,30 @@
     "build:css": "node build.js css",
     "build:html": "node build.js html",
     "build:lint": "tslint --project tsconfig.json",
-    "clean": "rimraf ./server/cgi & rimraf ./www/dist && rimraf ./cgi",
-    "test": "jest"
+    "clean": "rimraf ./server/cgi & rimraf ./www/dist && rimraf ./cgi"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ha1fDead/Portal0.git"
+    "url": "https://github.com/LaffertyDev/PersonalWebsite"
   },
   "author": "Nathan Lafferty",
   "license": "GPL-3.0",
   "dependencies": {
-    "npm-check-updates": "^7.0.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
-  "devDependencies": {
-    "@types/handlebars": "^4.1.0",
-    "@types/jest": "^26.0.3",
-    "@types/node": "^14.0.14",
+    "@types/node": "^22.7.7",
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
-    "handlebars": "^4.7.7",
-    "jest": "^26.1.0",
-    "lit-html": "^1.2.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.18.1",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-sourcemaps": "^0.6.2",
+    "handlebars": "^4.7.8",
+    "lit-html": "^3.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.24.0",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-replace": "^6.0.1",
+    "rollup-plugin-sourcemaps": "^0.6.3",
     "sass": "^1.26.9",
-    "ts-jest": "^26.1.1",
     "tslint": "^6.1.2",
-    "typescript": "^3.9.5"
+    "typescript": "^5.6.3"
   }
 }
