@@ -1,7 +1,6 @@
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
-import sourcemaps from 'rollup-plugin-sourcemaps';
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
@@ -32,8 +31,7 @@ const WorldbuilderModule = {
 		replace({
 		  'process.env.NODE_ENV': JSON.stringify( 'production' ),
 		  'preventAssignment': true
-		}),
-		sourcemaps()
+		})
 	]
 };
 

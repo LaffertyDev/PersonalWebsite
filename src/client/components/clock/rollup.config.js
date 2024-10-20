@@ -1,5 +1,4 @@
 import resolve from "@rollup/plugin-node-resolve";
-import sourcemaps from 'rollup-plugin-sourcemaps';
 
 const ClockModule = {
 	treeshake: {
@@ -15,8 +14,7 @@ const ClockModule = {
 	plugins: [
 		resolve({
 			modulesOnly: true
-		}),
-		sourcemaps()
+		})
 	]
 };
 
