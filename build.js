@@ -5,8 +5,7 @@ import handlebars from "handlebars"
 
 class BuildSystem {
 	BuildCSS() {
-		var result = sass.renderSync({
-			file: "src/client/sass/main.scss",
+		var result = sass.compile("src/client/sass/main.scss", {
 			outFile: "www/bundle.css"
 		});
 

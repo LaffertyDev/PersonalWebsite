@@ -1,125 +1,38 @@
-//all source code taken from: https://github.com/tallys
-@function is-cool-color($color) {
-	@return hue($color) < 310 and hue($color) > 140;
-}
+@use 'sass:color';
 
-@function is-high-key-value($color) {
-	@return hue($color) > 20 and hue($color) < 190;
-}
-
-@function is-highest-key-value($color) {
-	@return hue($color) > 30 and hue($color) <90;
-}
-
-@function harmonious-mix($mix, $base) {
-	@if (is-cool-color($mix)){
-		@if is-high-key-value($base) {
-			@return mix($mix, $base, 11%);
-		}
-		@else {
-			@return mix($mix, $base, 16%);
-		}
-	}
-	@else {
-		@if is-high-key-value($base) {
-			@return mix($mix, $base, 13%);
-		}
-		@else {
-			@return mix($mix, $base, 23%);
-		}
-	}
-}
-
-@function mix-neutral($color) {
-	@if (is-highest-key-value($color)) {
-		@if is-high-key-value(complement($color)) {
-			@return mix(complement($color), $color, 19%);
-		}
-		@else {
-			@return mix(complement($color), $color, 13%);
-		}
-	}
-	@else if (is-high-key-value($color)) {
-		@if is-high-key-value(complement($color)) {
-			@return mix(complement($color), $color, 31%);
-		}
-		@else {
-			@return mix(complement($color), $color, 23%);
-		}
-	}
-	@else {
-		@if is-highest-key-value(complement($color)) {
-			@return mix(complement($color), $color, 31%);
-		}
-		@if is-high-key-value(complement($color)) {
-			@return mix(complement($color), $color, 26%);
-		}
-		@else {
-			@return mix(complement($color), $color, 23%);
-		}
-	}
-}
-
-@function pick-contrast-of($color) {
-	@if is-high-key-value($color){
-		@if lightness($color) < 30% {
-			@return lighten(complement($color), 86);
-		}
-		@else if lightness($color) > 70% {
-			@return darken(complement($color), 68);
-		}
-		@else {
-			@return darken(complement($color), 53);
-		}
-} @else {
-	@if lightness($color) < 30% {
-			@return lighten(complement($color), 86);
-		}
-		@else if lightness($color) > 70% {
-			@return darken(complement($color), 68);
-		}
-		@else {
-			@return lighten(complement($color), 53);
-		}
-	}
-}
-
-//Core CTA colour and complemented colour
 $first-colour: hsl(355, 100%, 50%);
-$second-colour: complement($first-colour);
 
-$primary-colour: harmonious-mix($second-colour, $first-colour);
+$primary-colour: rgb(214.2, 40.8, 55.25);
 
 // Primary neutrals, highlight, midtone, shadow`
-$primary-neutral: mix-neutral($primary-colour);
-$primary-neutral-light: lighten($primary-neutral, 33);
-$primary-neutral-dark: darken($primary-neutral, 33);
+$primary-neutral: rgb(169.116, 85.884, 92.82);
+$primary-neutral-light: rgb(225.79944, 197.50056, 199.8588);
+$primary-neutral-dark: rgb(57.49944, 29.20056, 31.5588);
 
 // Primary tint and shade
-$primary-light: mix($primary-neutral-light, $primary-colour, 45%);
-$primary-dark: mix($primary-neutral-dark, $primary-colour, 45%);
+$primary-light: rgb(219.419748, 111.315252, 120.32396);
+$primary-dark: rgb(143.684748, 35.580252, 44.58896);
 
-$complementary-colour: harmonious-mix($first-colour, $second-colour);
+$complementary-colour: rgb(33.15, 221.85, 206.125);
 
 // Complementary Neutrals, highlight, midtone, shadow
-$complementary-neutral: mix-neutral($complementary-colour);
-$complementary-neutral-light: lighten($complementary-neutral, 33);
-$complementary-neutral-dark: darken($complementary-neutral, 33);
+$complementary-neutral: rgb(76.551, 178.449, 169.9575);
+$complementary-neutral-light: rgb(194.32734, 228.97266, 226.08555);
+$complementary-neutral-dark: rgb(26.02734, 60.67266, 57.78555);
 
 // Complementary tint and shade
-$complementary-light: mix($complementary-neutral-light, $complementary-colour, 45%);
-$complementary-dark: mix($complementary-neutral-dark, $complementary-colour, 45%);
+$complementary-light: rgb(105.679803, 225.055197, 215.1072475);
+$complementary-dark: rgb(29.944803, 149.320197, 139.3722475);
 
 // Pure neutrals, highlight, midtone, shadow
-$white: lighten($primary-neutral-light, 15);
-$neutral-grey: grayscale($primary-neutral);
-$primary-grey: mix($primary-colour, $complementary-colour, 30);
-$complementary-grey: mix($complementary-colour, $primary-colour, 63);
-$black: grayscale($complementary-neutral-dark);
-$analogous-colour: adjust-hue($complementary-colour, -40);
-$complementary-analogous: mix($analogous-colour, $complementary-colour, 66);
+$white: rgb(251.56464, 248.23536, 248.5128);
+$neutral-grey: rgb(127.5, 127.5, 127.5);
+$primary-grey: rgb(87.465, 167.535, 160.8625);
+$complementary-grey: rgb(100.1385, 154.8615, 150.30125);
+$black: rgb(43.35, 43.35, 43.35);
+$analogous-colour: rgb(33.15, 221.85, 80.325);
+$complementary-analogous: rgb(33.15, 221.85, 123.097);
 
-//examples
 .colour-box {
     width: 80px;
     height: 80px;
