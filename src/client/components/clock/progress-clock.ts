@@ -100,12 +100,10 @@ export class ProgressClock extends HTMLElement implements IVCustomElement {
 		return title;
 	}
 
-	// tslint:disable-next-line:no-empty
 	public attributeChangedCallback(): void {
 
 	}
 
-	// tslint:disable-next-line:no-empty
 	public connectedCallback(): void {
 
 	}

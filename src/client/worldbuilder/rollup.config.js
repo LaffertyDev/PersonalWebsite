@@ -2,10 +2,6 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 
-// `npm run build` -> `production` is true
-// `npm run dev` -> `production` is false
-const production = !process.env.ROLLUP_WATCH;
-
 const WorldbuilderModule = {
 	treeshake: {
 		moduleSideEffects: false,
@@ -29,8 +25,8 @@ const WorldbuilderModule = {
 			include: 'node_modules/**'
 		}),
 		replace({
-		  'process.env.NODE_ENV': JSON.stringify( 'production' ),
-		  'preventAssignment': true
+			'process.env.NODE_ENV': JSON.stringify( 'production' ),
+			'preventAssignment': true
 		})
 	]
 };

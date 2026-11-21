@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { RegionModel } from "./components/region/region";
 import { RegionForm } from "./components/region/regionform";
 import { RegionRender } from "./components/region/regionrender";
@@ -8,7 +8,7 @@ interface IWorldBuilderState {
 	regions: RegionModel[];
 }
 
-export class WorldBuilder extends React.Component<{}, IWorldBuilderState> {
+export class WorldBuilder extends React.Component<object, IWorldBuilderState> {
 	constructor(props: object) {
 		super(props);
 		this.state = {regions: []};
@@ -34,7 +34,6 @@ export class WorldBuilder extends React.Component<{}, IWorldBuilderState> {
 	}
 }
 
-ReactDOM.render(    
+createRoot(document.getElementById("reactApp")!).render(
 	React.createElement(WorldBuilder),
-	document.getElementById("reactApp"),
 );

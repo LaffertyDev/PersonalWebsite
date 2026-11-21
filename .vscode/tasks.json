@@ -7,7 +7,7 @@
 			"type": "npm",
 			"script": "build",
 			"problemMatcher": [
-				"$tslint5",
+				"$eslint-stylish",
 				"$tsc"
 			]
 		}
