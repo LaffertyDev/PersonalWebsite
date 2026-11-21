@@ -10,7 +10,7 @@ interface IRegionSummaryProps {
 /**
  * The region component, which displays a region with all of its fields in a user-friendly format
  */
-export class RegionSummary extends React.Component<IRegionSummaryProps, {}> {
+export class RegionSummary extends React.Component<IRegionSummaryProps> {
 	constructor(props: IRegionSummaryProps) {
 		super(props);
 	}
@@ -43,16 +43,16 @@ export class RegionSummary extends React.Component<IRegionSummaryProps, {}> {
 									</td>
 									<td>
 										{VUtils.prettyPrintRounded(settlement.CityMilesSq)} ({cityDimensions}² miles)
-								</td>
+									</td>
 									<td>
 										{settlement.CountrysidePopulation.toLocaleString()}
 									</td>
 									<td>
 										{VUtils.prettyPrintRounded(settlement.CountrysideMilesSq)} ({countrysideDimensions}² miles)
-								</td>
+									</td>
 									<td>
 										{settlement.SupportingVillages.toLocaleString()} ({avgVillagePop.toLocaleString()} avg people)
-								</td>
+									</td>
 									<td>
 										{settlement.Services.length.toLocaleString()}
 									</td>
@@ -67,10 +67,10 @@ export class RegionSummary extends React.Component<IRegionSummaryProps, {}> {
 				<hr />
 				{this.props.Settlements.map((settlement) => {
 					return (
-					<React.Fragment>
-						<SettlementView Settlement={settlement}></SettlementView>
-						<hr/>
-					</React.Fragment>);
+						<React.Fragment>
+							<SettlementView Settlement={settlement}></SettlementView>
+							<hr/>
+						</React.Fragment>);
 				})}
 			</div>
 		);

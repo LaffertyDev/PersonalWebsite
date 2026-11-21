@@ -67,17 +67,14 @@ export interface IVCustomElement {
 // 		shadow.appendChild(template.content.cloneNode(true));
 // 	}
 
-// 	// tslint:disable-next-line:no-empty
 // 	public attributeChangedCallback(): void {
 
 // 	}
 
-// 	// tslint:disable-next-line:no-empty
 // 	public connectedCallback(): void {
 
 // 	}
 
-// 	// tslint:disable-next-line:no-empty
 // 	public disconnectedCallback(): void {
 
 // 	}

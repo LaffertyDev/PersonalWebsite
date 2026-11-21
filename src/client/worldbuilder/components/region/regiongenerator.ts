@@ -5,7 +5,6 @@ import { RegionGenConfig } from "./regiongenconfig";
 /**
  * Handles pulling in settings & dependencies to build a region
  */
-// tslint:disable-next-line:max-classes-per-file
 export class RegionGenerator {
 	/**
 	 * Creates and returns a region from the provided configuration

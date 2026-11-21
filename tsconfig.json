@@ -3,7 +3,7 @@
 		"allowJs": false,
 		"forceConsistentCasingInFileNames": true,
 		//"module": This is local to the config
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"noImplicitAny": true,
 		//"outDir": This is local to /config/tsconfig and /server/tsconfig
 		"preserveConstEnums": true,

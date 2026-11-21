@@ -57,17 +57,14 @@ export class ProgressClockList extends HTMLElement implements IVCustomElement {
 		return (shadowRoot.getElementById(id) as HTMLInputElement).value;
 	}
 
-	// tslint:disable-next-line:no-empty
 	public attributeChangedCallback(): void {
 		// removeButton.removeEventListener("pointerup", this.HandleRemoveClick);
 	}
 
-	// tslint:disable-next-line:no-empty
 	public connectedCallback(): void {
 
 	}
 
-	// tslint:disable-next-line:no-empty
 	public disconnectedCallback(): void {
 
 	}

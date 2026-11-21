@@ -7,9 +7,8 @@ template.innerHTML = `
 `;
 
 const style = document.createElement("style");
-// tslint:disable:max-line-length
 style.textContent = 
-`
+	`
 	.clock {
 		width: 100px;
 		height: 100px;
@@ -48,7 +47,6 @@ style.textContent =
 		background-color: rgba(0,0,0,0);
 	}
 `;
-// tslint:enable:max-line-length
 
 /**
  * Inspiration:
@@ -109,8 +107,7 @@ export class Clock extends HTMLElement implements IVCustomElement {
 		return Number.parseInt(numSegmentsAttr, 10);
 	}
 
-	// tslint:disable-next-line:no-empty
-	public attributeChangedCallback(name: string, oldValue: string, newValue: string): void {
+	public attributeChangedCallback(name: string, _oldValue: string, _newValue: string): void {
 		switch (name) {
 			case "segments":
 				this.CreateSegments();
@@ -121,12 +118,10 @@ export class Clock extends HTMLElement implements IVCustomElement {
 		}
 	}
 
-	// tslint:disable-next-line:no-empty
 	public connectedCallback(): void {
 		this.UpgradeProperties();
 	}
 
-	// tslint:disable-next-line:no-empty
 	public disconnectedCallback(): void {
 
 	}
@@ -186,11 +181,12 @@ export class Clock extends HTMLElement implements IVCustomElement {
 		}
 	}
 
-	private UpgradeProperty(prop: any) {
-		if (this.hasOwnProperty(prop)) {
-			const value = (this as any)[prop];
-			delete (this as any)[prop];
-			(this as any)[prop] = value;
+	private UpgradeProperty(prop: string) {
+		if (Object.hasOwn(this, prop)) {
+			const self = this as unknown as Record<string, unknown>;
+			const value = self[prop];
+			delete self[prop];
+			self[prop] = value;
 		}
 	}
 }

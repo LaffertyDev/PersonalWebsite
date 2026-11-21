@@ -4,14 +4,14 @@ import { RegionSummary } from "../settlement/regionsummary";
 import { Settlement } from "../settlement/settlement";
 import { RegionModel } from "./region";
 
-interface IRegionRenderProps extends React.Props<RegionRender> {
+interface IRegionRenderProps {
 	region: RegionModel;
 }
 
 /**
  * The region component, which displays a region with all of its fields in a user-friendly format
  */
-export class RegionRender extends React.Component<IRegionRenderProps, {}> {
+export class RegionRender extends React.Component<IRegionRenderProps> {
 	constructor(props: IRegionRenderProps) {
 		super(props);
 	}

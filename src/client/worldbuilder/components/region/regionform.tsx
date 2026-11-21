@@ -4,7 +4,7 @@ import { RegionGenConfig } from "./regiongenconfig";
 import { RegionGenerator } from "./regiongenerator";
 
 interface IRegionFormProp {
-	onFormSubmit: (region: RegionModel) => any;
+	onFormSubmit: (region: RegionModel) => void;
 }
 
 /**
@@ -115,13 +115,13 @@ export class RegionForm extends React.Component<IRegionFormProp, RegionGenConfig
 						<div>
 							<label htmlFor="regionPop">Region Total Population</label>
 							<input id="regionPop" type="number" min="0" 
-							value={regionPop} onChange={this.handleRegionPopulation}/>
+								value={regionPop} onChange={this.handleRegionPopulation}/>
 							<p>Population affects the number of castles, villages, towns, and cities</p>
 						</div>
 						<div>
 							<label htmlFor="regionMilesSq">Region Area Size Miles²</label>
 							<input id="regionMilesSq" type="number" min="0" 
-							value={regionMilesSq} onChange={this.handleRegionSizeMilesSq} />
+								value={regionMilesSq} onChange={this.handleRegionSizeMilesSq} />
 							<p>Total size of the region, including inhospitable land</p>
 						</div>  
 					</fieldset>
@@ -130,18 +130,18 @@ export class RegionForm extends React.Component<IRegionFormProp, RegionGenConfig
 						<div>
 							<label htmlFor="regionAgeYears">Region Age Years</label>
 							<input id="regionAgeYears" type="number" min="0" 
-							value={regionAgeYears} onChange={this.handleRegionAgeYears}/>
+								value={regionAgeYears} onChange={this.handleRegionAgeYears}/>
 							<p>Older regions have more ruined / abandoned castles</p>
 						</div>
 						<div>
 							<label htmlFor="peoplePerCastle">People per Castle</label>
 							<input type="number" id="peoplePerCastle" min="0" 
-							value={peoplePerCastle} onChange={this.handlePeoplePerCastle} />
+								value={peoplePerCastle} onChange={this.handlePeoplePerCastle} />
 						</div>
 						<div>
 							<label htmlFor="peoplePerRuinedCastle">People per Ruined Castle</label>
 							<input type="number" id="peoplePerRuinedCastle" min="0" 
-							value={peoplePerRuinedCastle} onChange={this.handlePeoplePerRuinedCastle} />
+								value={peoplePerRuinedCastle} onChange={this.handlePeoplePerRuinedCastle} />
 						</div>
 						<div>
 							<label htmlFor="percentageOfCastlesInOutskirts">Castle % in outskirts</label>
@@ -160,7 +160,7 @@ export class RegionForm extends React.Component<IRegionFormProp, RegionGenConfig
 						<div>
 							<label htmlFor="cityPeoplePerMileSq">City People per Miles²</label>
 							<input type="number" id="cityPeoplePerMileSq" min="0"
-							value={cityPeoplePerMileSq} onChange={this.handlecityPeoplePerMileSq} />
+								value={cityPeoplePerMileSq} onChange={this.handlecityPeoplePerMileSq} />
 							<p>Average density is ~40,000 per Mile². Lowering this will create larger (in area) cities</p>
 						</div>
 					</fieldset>
@@ -169,13 +169,13 @@ export class RegionForm extends React.Component<IRegionFormProp, RegionGenConfig
 						<div>
 							<label htmlFor="peoplePerFarmlandSqMiles">People Per Mile² Farmland</label>
 							<input type="number" id="peoplePerFarmlandSqMiles" min="0"
-							value={peoplePerFarmlandSqMiles} onChange={this.handlepeoplePerFarmlandSqMiles} />
+								value={peoplePerFarmlandSqMiles} onChange={this.handlepeoplePerFarmlandSqMiles} />
 							<p>The viability of the farmable land itself, assuming maximum productivity. Higher numbers reduce sprawl, increase density</p>
 						</div>
 						<div>
 							<label htmlFor="averageFarmSizeAcres">Average Farm Size Acres</label>
 							<input type="number" id="averageFarmSizeAcres" min="0"
-							value={averageFarmSizeAcres} onChange={this.handleAverageFarmSizeAcres} />
+								value={averageFarmSizeAcres} onChange={this.handleAverageFarmSizeAcres} />
 							<p>
 								The productivity of a single farmer, and the amount of land they can work. Higher numbers reduce sprawl, increase density.
 								The average farm size is normally between 20 to 40 acres.
@@ -184,19 +184,19 @@ export class RegionForm extends React.Component<IRegionFormProp, RegionGenConfig
 						<div>
 							<label htmlFor="householdSize">Household Size</label>
 							<input type="number" id="householdSize" min="0"
-							value={householdSize} onChange={this.handleHouseholdSize} />
+								value={householdSize} onChange={this.handleHouseholdSize} />
 							<p>Average people per household. Higher numbers significantly increase sprawl, reduce density</p>
 						</div>
 						<div>
 							<label htmlFor="livestockPerPerson">Livestock per Person</label>
 							<input type="number" id="livestockPerPerson" min="0" step="0.1"
-							value={livestockPerPerson} onChange={this.handleLivestockPerPerson} />
+								value={livestockPerPerson} onChange={this.handleLivestockPerPerson} />
 							<p>Medieval societies had a lot of animals, mostly work animals. This includes Cows, Sheeps, Pigs, Chickens, etc.</p>
 						</div>
 						<div>
 							<label htmlFor="percentageOfLivestockIsFowl">Livestock Fowl Ratio</label>
 							<input type="number" id="percentageOfLivestockIsFowl" min="0" step="0.01"
-							value={percentageOfLivestockIsFowl} onChange={this.handlePercentageOfLivestockIsFowl} />
+								value={percentageOfLivestockIsFowl} onChange={this.handlePercentageOfLivestockIsFowl} />
 							<p>Medieval societies generally raised more fowl. Higher percentages imply more fowl. (Chickens, Turkeys, etc.)</p>
 						</div>
 					</fieldset>

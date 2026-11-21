@@ -6,7 +6,7 @@ This is my personal website.
 
 Domain is registered through Namecheap.
 
-Hosting is through Digital Ocean
+Hosting is through Cloudflare Pages (static site, project name `personalwebsite`).
 
 ## Developing
 
@@ -24,11 +24,18 @@ Running:
 
 ## Deploying
 
-Deploying is done through Github Actions. Explained:
+Deploying is done through Github Actions (`.github/workflows/build_frontend.yml`). Explained:
 
-- GHA will SSH into my Digital Ocean box (using private SSH Keys)
-- GHA will sync the /opt/personalwebsite directory
-- NGINX will see the changes and update accordingly, serving out of the /
+- On every push/PR to `master`, GHA runs `npm ci` and `npm run build`
+- On pushes to `master`, GHA uploads the built `www/` directory to Cloudflare Pages via `wrangler pages deploy`
+- Cloudflare Pages serves `foo.html` at `/foo` and uses `404.html` for missing pages automatically
+
+Required GitHub repository secrets:
+
+- `CLOUDFLARE_API_TOKEN` - API token with the `Account > Cloudflare Pages > Edit` permission
+- `CLOUDFLARE_ACCOUNT_ID` - Cloudflare account ID
+
+Manual deploy from a local machine: `npm run build && npx wrangler pages deploy www --project-name=personalwebsite --branch=master`
 
 ## Adding a View
 

@@ -9,7 +9,7 @@ interface ISettlementProps {
 /**
  * The region component, which displays a region with all of its fields in a user-friendly format
  */
-export class SettlementView extends React.Component<ISettlementProps, {}> {
+export class SettlementView extends React.Component<ISettlementProps> {
 	constructor(props: ISettlementProps) {
 		super(props);
 	}
@@ -76,17 +76,17 @@ export class SettlementView extends React.Component<ISettlementProps, {}> {
 								return 1;
 							}
 						}).map((service) => {
-						return (
-							<React.Fragment>
-								<dt>
-									{ service[0] }
-								</dt>
-								<dd>
-									{ service[1].length }
-								</dd>
-							</React.Fragment>
-						);
-					})}
+							return (
+								<React.Fragment>
+									<dt>
+										{ service[0] }
+									</dt>
+									<dd>
+										{ service[1].length }
+									</dd>
+								</React.Fragment>
+							);
+						})}
 				</dl>
 			</div>
 		);
