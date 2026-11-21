@@ -5,15 +5,18 @@ import handlebars from "handlebars"
 
 class BuildSystem {
 	BuildCSS() {
-		var result = sass.compile("src/client/sass/main.scss", {
-			outFile: "www/bundle.css"
-		});
+		const result = sass.compile("src/client/sass/main.scss");
 
-		fs.writeFile("www/bundle.css", result.css, function (err) {
-			if (!err) {
-				//file written on disk
-			}
-		});
+		fs.mkdirSync("www", { recursive: true });
+		fs.writeFileSync("www/bundle.css", result.css);
+		console.log("wrote bundle.css to disk");
+	}
+
+	// Copies checked-in static assets (icons, manifests, ...) into the output directory.
+	// Everything in www/ is generated, so this is the only way non-built files get deployed.
+	BuildStatic() {
+		fs.cpSync("src/static", "www", { recursive: true });
+		console.log("copied src/static to www");
 	}
 
 	BuildHTML() {
@@ -69,4 +72,8 @@ if (process.argv.includes("css")) {
 
 if (process.argv.includes("html")) {
 	buildSystem.BuildHTML();
+}
+
+if (process.argv.includes("static")) {
+	buildSystem.BuildStatic();
 }

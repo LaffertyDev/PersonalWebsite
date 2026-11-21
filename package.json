@@ -5,13 +5,14 @@
   "main": "app.ts",
   "type": "module",
   "scripts": {
-    "build": "npm run build:lint && npm run clean && npm run build:compile && npm run build:bundle && npm run build:css && npm run build:html",
+    "build": "npm run build:lint && npm run clean && npm run build:compile && npm run build:bundle && npm run build:css && npm run build:html && npm run build:static",
     "build:bundle": "rollup -c",
     "build:compile": "node ./node_modules/typescript-7/bin/tsc -p ./src/client/tsconfig.json",
     "build:css": "node build.js css",
     "build:html": "node build.js html",
+    "build:static": "node build.js static",
     "build:lint": "eslint .",
-    "clean": "rimraf ./www/dist ./cgi"
+    "clean": "rimraf ./www ./cgi"
   },
   "repository": {
     "type": "git",
@@ -39,9 +40,12 @@
     "sass": "^1.108.2",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-7": "npm:typescript@^7.0.2",
-    "typescript-eslint": "^8.73.0"
+    "typescript-eslint": "^8.73.0",
+    "wrangler": "^4.166.0"
   },
   "allowScripts": {
-    "fsevents": false
+    "fsevents": false,
+    "esbuild": false,
+    "workerd": false
   }
 }

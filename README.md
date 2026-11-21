@@ -28,6 +28,9 @@ Deploying is done through Github Actions (`.github/workflows/build_frontend.yml`
 
 - On every push/PR to `master`, GHA runs `npm ci` and `npm run build`
 - On pushes to `master`, GHA uploads the built `www/` directory to Cloudflare Pages via `wrangler pages deploy`
+- `www/` is entirely build output (gitignored, wiped by `npm run clean`): HTML from `src/client/views`, CSS from `src/client/sass`, JS bundles in `www/dist`, and static files copied from `src/static`. Nothing else gets deployed.
+- Before deploying, CI fails if the build changed any file in the working tree, and it logs the exact list of files being uploaded
+- Wrangler is a pinned dependency in `package-lock.json`, so the deploy step doesn't install anything during the deploy
 - Cloudflare Pages serves `foo.html` at `/foo` and uses `404.html` for missing pages automatically
 
 Required GitHub repository secrets:
@@ -36,6 +39,8 @@ Required GitHub repository secrets:
 - `CLOUDFLARE_ACCOUNT_ID` - Cloudflare account ID
 
 Manual deploy from a local machine: `npm run build && npx wrangler pages deploy www --project-name=personalwebsite --branch=master`
+
+To add a static file (image, robots.txt, etc.), put it under `src/static/`; it's served at the same path relative to the site root.
 
 ## Adding a View
 
