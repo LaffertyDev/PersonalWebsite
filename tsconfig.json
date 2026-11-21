@@ -5,7 +5,7 @@
 		//"module": This is local to the config
 		"moduleResolution": "bundler",
 		"noImplicitAny": true,
-		//"outDir": This is local to /config/tsconfig and /server/tsconfig
+		//"outDir": Set in src/client/tsconfig.json (compiles to ./cgi, which Rollup bundles into www/dist)
 		"preserveConstEnums": true,
 		"pretty": true,
 		"removeComments": true,
